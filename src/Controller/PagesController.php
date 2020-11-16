@@ -3,8 +3,9 @@
     namespace App\Controller;
 
 /*Meme fonction que les "require" du php natif, appel les objets que l'on va réutiliser dans le code*/
-    use Symfony\Component\HttpFoundation\Request;
-    use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
     class PagesController{
         /**
@@ -34,6 +35,21 @@
             }
             /*Besoin d'appeler la fonction die() sinon erreur - va évoluer dans le futur*/
             die();
+        }
+
+        /**
+        * @Route ("/name", name = "name")
+         **/
+        public function name (Request $request){
+            /*J'enregistre les infos prises dans la requete dans des variables*/
+            $name = $request->query->get('name');
+            $firstname = $request->query->get('firstname');
+
+            /*j'écrie en amon mon message (pas forcément nécessaire)*/
+            $msg = '<h1>Hello '.$firstname.' '.$name.'</h1>';
+            /*j'envoie une réponse (qui me permet de me passer de "die()" et de mettre des balises html :)*/
+            $response = new Response($msg);
+            return $response;
         }
     }
 ?>
