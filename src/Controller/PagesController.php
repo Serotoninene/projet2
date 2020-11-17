@@ -3,11 +3,18 @@
     namespace App\Controller;
 
 /*Meme fonction que les "require" du php natif, appel les objets que l'on va réutiliser dans le code*/
-    use Symfony\Component\HttpFoundation\Request;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\HttpFoundation\Response;
     use Symfony\Component\Routing\Annotation\Route;
 
-    class PagesController{
+/**
+ * On rajoute une classe parente "AbstractController" pour pouvoir utiliser ses méthodes qui permettront de rediriger
+ * vers d'autres pages
+ */
+
+    class PagesController extends AbstractController {
         /**
          * Définit la route vers laquelle on veut renvoyer -- ANNOTATION
          * @Route ("/", name="homepage")
@@ -71,6 +78,8 @@
              */
 //            $articleId = $request->query->get('id');
 
+
+
             /**
              * Simulation d'une requête SQL qui me donnerait tous les articles en les triant par leurs id
              **/
@@ -94,6 +103,33 @@
              * Toujours RETOURNER la Response, sinon rien ne va s'afficher
              */
             return $response;
+        }
+
+        /**
+         * @Route("/form", name = "page_form")
+         */
+        public function form(){
+            /**
+            * On crée l'imitation d'un formulaire à l'aide d'une variable true ou false, c'est seulement pour l'exercice
+             * permet de simuler l'envoi ou non de données par l'utilisateur
+             */
+            $isFormFilled = true;
+
+            /**
+             * si le formulaire n'a pas été rempli : envoi message d'erreur avec la technique $response, ne pas oublier le "return"
+             */
+            if (!$isFormFilled){
+                $response = new Response("Veuillez remplir le formulaire s'il vous plait.");
+                return $response;
+            }else{
+                /**
+                 * si le formulaire a été rempli : redirige vers la homepage, on peut utiliser la methode redirectToRoute car on
+                 * au début du code "étendue" notre class à la classe "AbstractController".
+                 * C'est grâce au name de l'annotation qui gère la homepage que l'on peut retrouver son chemin et rediriger vers elle
+                 * Again : ne pas oublier le return, si on l'oubli, rien ne se passe.
+                 */
+                return $this->redirectToRoute("homepage");
+            }
         }
     }
 ?>
