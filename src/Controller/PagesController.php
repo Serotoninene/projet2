@@ -4,8 +4,8 @@
 
 /*Meme fonction que les "require" du php natif, appel les objets que l'on va réutiliser dans le code*/
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+    use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\HttpFoundation\Response;
     use Symfony\Component\Routing\Annotation\Route;
 
@@ -59,51 +59,7 @@ use Symfony\Component\HttpFoundation\Request;
             return $response;
         }
 
-        /**
-         * -- WILDCARD = je pose ma variable directement dans la route, ou plutot, j'avertis ma route en amont
-         * qu'elle va être composée d'une variable
-         *
-        * @Route ("/article/{id}", name = "page_article")
-         * Je place dans les PARAMETRES de la fonction la classe Request pour ne pas avoir à l'instancier plus tard
-         * = AUTOWIRE
-         * je lui donne également une variable pour pouvoir l'appeler
-         *
-         * si WILDCARD, ne pas oublier d'instancier la variable dans les paramètres pour pouvoir la réutiliser
-         * par la suite
-         */
-        public function article ($id){
-            /**
-             * je recupère l'id dans les données envoyées par l'utilisateur avec Request
-             * devient inutile après l'ajout de la wildcard
-             */
-//            $articleId = $request->query->get('id');
 
-
-
-            /**
-             * Simulation d'une requête SQL qui me donnerait tous les articles en les triant par leurs id
-             **/
-            $article = [
-               1 => "article 1",
-               2 => "article 2",
-               3 => "article 3",
-               4 => "article 4",
-               5 => "article 5",
-               6 => "article 6",
-               7 => "article 7"
-            ] ;
-
-            /**
-             * j'instancie Response, je ne le fais pas en autowire car dans ce cas, il faut que je rentre des paramètres
-             * (mon texte) pour qu'elle marche, donc j'instancie directement dans la fonction, c'est le même principe.
-             */
-            $response = new Response("<h1>".$article[$id]."</h1>");
-
-            /**
-             * Toujours RETOURNER la Response, sinon rien ne va s'afficher
-             */
-            return $response;
-        }
 
         /**
          * @Route("/form", name = "page_form")
