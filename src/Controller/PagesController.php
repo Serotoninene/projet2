@@ -53,16 +53,23 @@
         }
 
         /**
-        * @Route ("/article", name = "page_article")
+         * -- WILDCARD = je pose ma variable directement dans la route, ou plutot, j'avertis ma route en amont
+         * qu'elle va être composée d'une variable
+         *
+        * @Route ("/article/{id}", name = "page_article")
          * Je place dans les PARAMETRES de la fonction la classe Request pour ne pas avoir à l'instancier plus tard
          * = AUTOWIRE
-         * je lui donne également une variable pour pouvoir l'appeler -->
+         * je lui donne également une variable pour pouvoir l'appeler
+         *
+         * si WILDCARD, ne pas oublier d'instancier la variable dans les paramètres pour pouvoir la réutiliser
+         * par la suite
          */
-        public function article (Request $request){
+        public function article ($id){
             /**
              * je recupère l'id dans les données envoyées par l'utilisateur avec Request
+             * devient inutile après l'ajout de la wildcard
              */
-            $articleId = $request->query->get('id');
+//            $articleId = $request->query->get('id');
 
             /**
              * Simulation d'une requête SQL qui me donnerait tous les articles en les triant par leurs id
@@ -81,7 +88,7 @@
              * j'instancie Response, je ne le fais pas en autowire car dans ce cas, il faut que je rentre des paramètres
              * (mon texte) pour qu'elle marche, donc j'instancie directement dans la fonction, c'est le même principe.
              */
-            $response = new Response("<h1>".$article[$articleId]."</h1>");
+            $response = new Response("<h1>".$article[$id]."</h1>");
 
             /**
              * Toujours RETOURNER la Response, sinon rien ne va s'afficher
