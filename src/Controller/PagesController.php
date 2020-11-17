@@ -3,9 +3,9 @@
     namespace App\Controller;
 
 /*Meme fonction que les "require" du php natif, appel les objets que l'on va réutiliser dans le code*/
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+    use Symfony\Component\HttpFoundation\Request;
+    use Symfony\Component\HttpFoundation\Response;
+    use Symfony\Component\Routing\Annotation\Route;
 
     class PagesController{
         /**
@@ -49,6 +49,26 @@ use Symfony\Component\Routing\Annotation\Route;
             $msg = '<h1>Hello '.$firstname.' '.$name.'</h1>';
             /*j'envoie une réponse (qui me permet de me passer de "die()" et de mettre des balises html :)*/
             $response = new Response($msg);
+            return $response;
+        }
+
+        /**
+        * @Route ("/article", name = "page_article")
+         */
+        public function article (Request $request){
+            $articleId = $request->query->get('id');
+
+            $article = [
+               1 => "article 1",
+               2 => "article 2",
+               3 => "article 3",
+               4 => "article 4",
+               5 => "article 5",
+               6 => "article 6",
+               7 => "article 7"
+            ] ;
+
+            $response = new Response("<h1>".$article[$articleId]."</h1>");
             return $response;
         }
     }
