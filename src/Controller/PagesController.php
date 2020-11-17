@@ -54,10 +54,19 @@
 
         /**
         * @Route ("/article", name = "page_article")
+         * Je place dans les PARAMETRES de la fonction la classe Request pour ne pas avoir à l'instancier plus tard
+         * = AUTOWIRE
+         * je lui donne également une variable pour pouvoir l'appeler -->
          */
         public function article (Request $request){
+            /**
+             * je recupère l'id dans les données envoyées par l'utilisateur avec Request
+             */
             $articleId = $request->query->get('id');
 
+            /**
+             * Simulation d'une requête SQL qui me donnerait tous les articles en les triant par leurs id
+             **/
             $article = [
                1 => "article 1",
                2 => "article 2",
@@ -68,7 +77,15 @@
                7 => "article 7"
             ] ;
 
+            /**
+             * j'instancie Response, je ne le fais pas en autowire car dans ce cas, il faut que je rentre des paramètres
+             * (mon texte) pour qu'elle marche, donc j'instancie directement dans la fonction, c'est le même principe.
+             */
             $response = new Response("<h1>".$article[$articleId]."</h1>");
+
+            /**
+             * Toujours RETOURNER la Response, sinon rien ne va s'afficher
+             */
             return $response;
         }
     }
