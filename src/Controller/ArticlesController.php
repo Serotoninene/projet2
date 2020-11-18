@@ -16,7 +16,7 @@ namespace App\Controller;
          * @Route ("/article/{id}", name = "page_article")
          *
          */
-        public function article (){
+        public function article ($id){
             /**
              * je recupère l'id dans les données envoyées par l'utilisateur avec Request
              * devient inutile après l'ajout de la wildcard
@@ -28,7 +28,7 @@ namespace App\Controller;
             /**
              * Simulation d'une requête SQL qui me donnerait tous les articles en les triant par leurs id
              **/
-            $article = [
+            $articles = [
                 1 => "article 1",
                 2 => "article 2",
                 3 => "article 3",
@@ -39,11 +39,22 @@ namespace App\Controller;
             ] ;
 
             /**
+             * Je stocke un des articles dans une variable
+             */
+            $article = $articles[$id];
+
+            /**
              * Avec render, methode provenant de la classe mère Abstract Controller et qui permet d'appeler un dossier
              * html.twig, beaucoup plus propre qu'un simple Response;
              * Tous les dossier twig se trouvent dans templates
              */
-            return $this->render('article.html.twig');
+            /**
+             * Pour insérer une variable php dans le dossier twig, il faut d'abord l'instancier lors de l'appel de la
+             * requête render, j'appelle ici un tableau contenant tous les ârticles
+             */
+            return $this->render('article.html.twig',
+            ['article'=>$article]
+            );
         }
 
     }
