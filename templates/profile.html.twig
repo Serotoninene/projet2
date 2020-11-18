@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile page</title>
+</head>
+<body>
+
+{#Pour rajouter une fonction if dans du twig, il faut utiliser "{% ... %}" et ne pas oublier de fermer la boucle quand
+elle est terminée via "{% endif %}"#}
+    {% if profile.active %}
+
+{#On peut rajouter du texte html à côté d'un élément php sans rien rajouter#}
+        <h1>{{profile.name}} {{ profile.firstname}} </h1>
+        <h2> {{ profile.age }} ans</h2>
+        <p>Le métier de cette personne est {{ profile.job }}</p>
+
+
+    {% endif %}
+
+</body>
+</html>

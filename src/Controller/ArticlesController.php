@@ -53,8 +53,32 @@ namespace App\Controller;
              * requête render, j'appelle ici un tableau contenant tous les ârticles
              */
             return $this->render('article.html.twig',
-            ['article'=>$article]
-            );
+                [
+                    'article'=>$article
+                ]);
+        }
+
+
+        /**
+         * @Route ("/profile", name ="page_profile")
+         */
+        public function profile(){
+
+            $profile = [
+                "firstname" => "Flantier",
+                "name" => "Noel",
+                "age" => 40,
+                "job" => "secret agent",
+                "active" => true
+            ];
+
+            /*Pour envoyer une variable php dans un fichier twig, il suffit de lui donner un nom et référencer ce nom
+            à la-dite variable
+            /!\ Bien indenter les variables en colonnes, s'il y en a beaucoup, il faut que ce soit clair*/
+            return $this->render("profile.html.twig",[
+               'profile' => $profile
+            ]);
+
         }
 
     }
