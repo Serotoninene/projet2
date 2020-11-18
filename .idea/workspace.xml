@@ -20,9 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de63c68f-b286-4ae2-83a6-b9f3ab3df015" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/profile.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ProfilesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/skills.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticlesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +165,7 @@
       <updated>1605533027028</updated>
       <workItem from="1605533028173" duration="4494000" />
       <workItem from="1605602838731" duration="5430000" />
-      <workItem from="1605691050741" duration="2507000" />
+      <workItem from="1605691050741" duration="4986000" />
     </task>
     <servers />
   </component>
