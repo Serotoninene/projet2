@@ -12,12 +12,37 @@
          */
         public function profile(){
 
-            $profile = [
-                "firstname" => "Flantier",
-                "name" => "Noel",
-                "age" => 40,
-                "job" => "secret agent",
-                "active" => true
+            $agents = [
+                1 => [
+                    "lastName" => "Robert",
+                    "firstName" => "David",
+                    "age" => 30,
+                    "published" => true
+                ],
+                2 => [
+                    "lastName" => "Labaste",
+                    "firstName" => "Denis",
+                    "age" => 29,
+                    "published" => true
+                ],
+                3 => [
+                    "lastName" => "Rozand",
+                    "firstName" => "Mathieu",
+                    "age" => 31,
+                    "published" => false
+                ],
+                4 => [
+                    "lastName" => "Despert",
+                    "firstName" => "Yoann",
+                    "age" => 33,
+                    "published" => true
+                ],
+                5 => [
+                    "lastName" => "Dorignac",
+                    "firstName" => "Loic",
+                    "age" => 34,
+                    "published" => false
+                ]
             ];
 
             /*Pour envoyer une variable php dans un fichier twig, il suffit de lui donner un nom et référencer ce nom
@@ -28,7 +53,7 @@
 
             return $this->render("profile.html.twig",[
 
-                'profile' => $profile
+                'agents' => $agents
             ]);
 
         }
