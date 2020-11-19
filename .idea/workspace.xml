@@ -20,10 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de63c68f-b286-4ae2-83a6-b9f3ab3df015" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/profiles.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProfilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profiles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profiles.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +167,7 @@
       <workItem from="1605533028173" duration="4494000" />
       <workItem from="1605602838731" duration="5430000" />
       <workItem from="1605691050741" duration="6489000" />
-      <workItem from="1605778087657" duration="2815000" />
+      <workItem from="1605778087657" duration="5992000" />
     </task>
     <servers />
   </component>
@@ -193,5 +195,16 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="605" y="164" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1605778325163" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/templates/base.html.twig</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

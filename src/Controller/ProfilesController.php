@@ -9,7 +9,7 @@
     class ProfilesController extends AbstractController{
 
         /**
-         * @Route ("/profile", name ="page_profiles")
+         * @Route ("/profile", name ="profile_list")
          */
         public function profiles(){
 
@@ -86,7 +86,7 @@
         /**
          * ici, l'id qui définit la route est envoyé par la page profiles, c'est grâce à l'id de l'agent sur
          * laquelle on a cliqué qu'on va pouvoir ouvrir la page dudit agent
-         * @Route ("/profile/{id}", name= "page_profile")
+         * @Route ("/profile/{id}", name= "profile_show")
          */
 
         public function profile ($id){
