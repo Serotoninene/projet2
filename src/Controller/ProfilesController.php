@@ -3,41 +3,47 @@
     namespace App\Controller;
 
     use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+    use Symfony\Component\HttpFoundation\Response;
     use Symfony\Component\Routing\Annotation\Route;
 
     class ProfilesController extends AbstractController{
 
         /**
-         * @Route ("/profile", name ="page_profile")
+         * @Route ("/profile", name ="page_profiles")
          */
-        public function profile(){
+        public function profiles(){
 
             $agents = [
                 1 => [
+                    "id" => 1,
                     "lastName" => "Robert",
                     "firstName" => "David",
                     "age" => 30,
                     "published" => true
                 ],
                 2 => [
+                    "id" => 2,
                     "lastName" => "Labaste",
                     "firstName" => "Denis",
                     "age" => 29,
                     "published" => true
                 ],
                 3 => [
+                    "id" => 3,
                     "lastName" => "Rozand",
                     "firstName" => "Mathieu",
                     "age" => 31,
                     "published" => false
                 ],
                 4 => [
+                    "id" => 4,
                     "lastName" => "Despert",
                     "firstName" => "Yoann",
                     "age" => 33,
                     "published" => true
                 ],
                 5 => [
+                    "id" => 5,
                     "lastName" => "Dorignac",
                     "firstName" => "Loic",
                     "age" => 34,
@@ -51,12 +57,13 @@
 
             /* COMPILATION = quand on traduit un langage en un autre, dans ce cas, on traduit twig en html*/
 
-            return $this->render("profile.html.twig",[
+            return $this->render("profiles.html.twig",[
 
                 'agents' => $agents
             ]);
 
         }
+
 
         /**
          * @Route ("/profile-skills", name = "page_skills")
@@ -72,6 +79,65 @@
              */
             return $this->render("skills.html.twig",[
                 'qualites' => $qualites
+            ]);
+
+        }
+
+        /**
+         * ici, l'id qui définit la route est envoyé par la page profiles, c'est grâce à l'id de l'agent sur
+         * laquelle on a cliqué qu'on va pouvoir ouvrir la page dudit agent
+         * @Route ("/profile/{id}", name= "page_profile")
+         */
+
+        public function profile ($id){
+
+            $agents = [
+                1 => [
+                    "id" => 1,
+                    "lastName" => "Robert",
+                    "firstName" => "David",
+                    "age" => 30,
+                    "published" => true
+                ],
+                2 => [
+                    "id" => 2,
+                    "lastName" => "Labaste",
+                    "firstName" => "Denis",
+                    "age" => 29,
+                    "published" => true
+                ],
+                3 => [
+                    "id" => 3,
+                    "lastName" => "Rozand",
+                    "firstName" => "Mathieu",
+                    "age" => 31,
+                    "published" => false
+                ],
+                4 => [
+                    "id" => 4,
+                    "lastName" => "Despert",
+                    "firstName" => "Yoann",
+                    "age" => 33,
+                    "published" => true
+                ],
+                5 => [
+                    "id" => 5,
+                    "lastName" => "Dorignac",
+                    "firstName" => "Loic",
+                    "age" => 34,
+                    "published" => false
+                ]
+            ];
+
+            /**
+            On reprend ici l'id envoyé par la page profiles pour ne sélectionner que les infos de l'agent qui nous
+            intéresse
+             */
+
+            $agent = $agents[$id];
+
+            return $this->render("profile.html.twig",[
+                'agent' => $agent
             ]);
 
         }

@@ -5,20 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile page</title>
+    <title>Agent</title>
 </head>
 <body>
 
-{% for agent in agents  %}
-
-    {% if agent.published %}
-        <h1>{{agent.lastName}} {{ agent.firstName}} </h1>
-        <h2> {{ agent.age }} ans</h2>
-        <hr>
-    {% endif %}
-
-{% endfor %}
-
+    <h1>{{ agent.firstName }} {{ agent.lastName }}</h1>
+    <p> {{ agent.age }} ans</p>
 
 </body>
 </html>

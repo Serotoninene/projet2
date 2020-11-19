@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de63c68f-b286-4ae2-83a6-b9f3ab3df015" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/profiles.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProfilesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html.twig" afterDir="false" />
@@ -163,7 +164,8 @@
       <updated>1605533027028</updated>
       <workItem from="1605533028173" duration="4494000" />
       <workItem from="1605602838731" duration="5430000" />
-      <workItem from="1605691050741" duration="5838000" />
+      <workItem from="1605691050741" duration="6489000" />
+      <workItem from="1605778087657" duration="2815000" />
     </task>
     <servers />
   </component>
@@ -183,9 +185,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="427" y="94" width="586" height="735" key="find.popup" timestamp="1605693563368">
+    <state x="427" y="94" width="586" height="735" key="find.popup" timestamp="1605780656195">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="427" y="94" width="586" height="735" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1605693563368" />
+    <state x="427" y="94" width="586" height="735" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1605780656195" />
+    <state x="605" y="164" width="670" height="676" key="search.everywhere.popup" timestamp="1605778325163">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="605" y="164" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1605778325163" />
   </component>
 </project>
